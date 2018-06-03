@@ -1,0 +1,22 @@
+#user_data{
+	text-align:center;
+}
+#users_table{
+	text-align:center;
+}
+#error {
+	color:red;
+}
+table{
+	text-align:center;
+	min-width:50%;
+	margin:auto;
+}
+.g-recaptcha {
+	display: inline-block
+}
+label {
+    display: inline-block;
+    width:80px;
+    text-align: right;
+}
