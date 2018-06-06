@@ -16,6 +16,14 @@
 		$curlData = json_decode($curlData, true);
 		return $curlData;
 	}
+	
+	function is_empty(...$fields) {
+		foreach($fields as $field) {
+			if ($field=="")
+				return false;
+		}
+		return true;
+	}
 	/*проверка является ли фото изображением*/
 	function is_photo($photo) {
 		if (mime_content_type($photo['tmp_name'])=="image/png" or mime_content_type($photo['tmp_name'])=="image/jpeg") {
@@ -46,6 +54,7 @@
 			$tmp=$files['tmp_name'][$count];
              $count=$count + 1;
 			if(move_uploaded_file($tmp, $full_path)){
+				$full_path = $mysqli->escape_string($full_path);
 				$mysqli->query("INSERT into files (name,user_id) VALUES ('$full_path','$user_id')");
 			} 
 		} 

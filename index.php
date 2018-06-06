@@ -36,7 +36,7 @@
 			}	
 			$photo = $_FILES['photo'];
 			$files = $_FILES['files'];			
-			if ($pass==true and is_photo($photo)==true and $_POST['name']!="" and $_POST['surname']!="" and $_POST['age']!="") {
+			if ($pass==true and is_photo($photo)==true and is_empty($_POST['name'],$_POST['surname'],$_POST['age'])) {
 				$name = $mysqli->escape_string($_POST['name']);
 				$surname = $mysqli->escape_string($_POST['surname']); 
 				$age = $mysqli->escape_string($_POST['age']);				
@@ -57,7 +57,7 @@
 				$msg = "Не заполнены необходимые поля";
 			} 
 	 
-		} else {
+		} else if (isset($_POST['send'])){
 			$msg = "Капча не прошла проверку";
 		}
 	}

@@ -22,7 +22,7 @@
 			<input type="file" id="photo" name="photo" accept="image/jpeg,image/png" required></p>
 			<p><label for="files">Файлы:</label>
 			<input type="file" id="files" name="files[]" accept="application/msword" multiple="multiple" required></p>
-			<p><input type="submit" value="Отправить"></p>
+			<p><input type="submit" name="send" value="Отправить"></p>
 			<div class="g-recaptcha" data-sitekey="6LciZVwUAAAAAMNqu8Tx5TPoZIxvmI60_1-uXGgg"></div>
 		</form>
 	</div>
